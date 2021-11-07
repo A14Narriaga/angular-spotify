@@ -11,7 +11,7 @@
 - 📝 Comments or readme notes
 
 ## Github pages
-````
+```
 npm i -g angular-cli-ghpages
 npx ng build --base-href "https://a14narriaga.github.io/angular-spotify/"
 npx ngh --dir dist/angular-spotify
