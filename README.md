@@ -1,5 +1,5 @@
 [Spotify Api](https://beta.developer.spotify.com/console/)
-[End point](https://restcountries.com/)
+[Countries Api](https://restcountries.com/)
 
 ## Commits style
 - 🎉 Initial commit
@@ -9,6 +9,12 @@
 - 🎨 Not affect the meaning of the code
 - ⚙️ Add files and configurations
 - 📝 Comments or readme notes
+
+## Prettier format
+```
+npm i --global prettier
+npx prettier --write .\src\
+```
 
 ## Github pages
 ```

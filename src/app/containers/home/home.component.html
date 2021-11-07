@@ -1,0 +1,11 @@
+<div class="container">
+	<h6 class="text-muted">New releases</h6>
+	<hr />
+	<section class="albums">
+		<app-album
+			[song]="release"
+			*ngFor="
+				let release of newReleases
+			"></app-album>
+	</section>
+</div>

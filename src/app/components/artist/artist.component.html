@@ -1,1 +1,11 @@
-<p>artist works!</p>
+<div class="card">
+	<img
+		[src]="artist.images[0].url"
+		class="card-img-top"
+		alt="..." />
+	<div class="card-body">
+		<h6 class="card-title text-muted">
+			{{ artist.name | cut }}
+		</h6>
+	</div>
+</div>

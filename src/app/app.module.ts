@@ -4,18 +4,24 @@ import { BrowserModule } from '@angular/platform-browser'
 import { AppRoutingModule } from './app-routing.module'
 import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component'
-import { HomeComponent } from './components/home/home.component'
-import { SearchComponent } from './components/search/search.component'
-import { ArtistComponent } from './components/artist/artist.component'
+import { HomeComponent } from './containers/home/home.component'
+import { SearcherComponent } from './components/searcher/searcher.component'
 import { NavbarComponent } from './components/navbar/navbar.component'
+import { AlbumComponent } from './components/album/album.component'
+import { CutPipe } from './pipes/cut/cut.pipe'
+import { ArtistComponent } from './components/artist/artist.component'
+import { SearchComponent } from './containers/search/search.component'
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		HomeComponent,
-		SearchComponent,
-		ArtistComponent,
+		SearcherComponent,
 		NavbarComponent,
+		AlbumComponent,
+		CutPipe,
+		ArtistComponent,
+		SearchComponent,
 	],
 	imports: [
 		BrowserModule,

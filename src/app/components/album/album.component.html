@@ -1,0 +1,23 @@
+<div class="card">
+	<img
+		[src]="song.images[0].url"
+		class="card-img-top"
+		alt="..." />
+	<div class="card-body">
+		<h6 class="card-title">
+			{{ song.name | cut }}
+		</h6>
+		<p class="card-text">
+			<span
+				class="text-muted"
+				*ngIf="song.artists.length === 1">
+				{{ song.artists[0].name }}
+			</span>
+			<span
+				class="text-muted"
+				*ngIf="song.artists.length > 1">
+				{{ song.artists[0].name }} and more.
+			</span>
+		</p>
+	</div>
+</div>
