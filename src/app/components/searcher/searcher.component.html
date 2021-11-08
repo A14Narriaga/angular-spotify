@@ -9,6 +9,7 @@
 			aria-label="Recipient's username"
 			aria-describedby="basic-addon2" />
 		<span
+			*ngIf="searchInput.value !== ''"
 			(click)="searchInput.value = ''"
 			class="input-group-text clear"
 			id="basic-addon1">
@@ -22,15 +23,3 @@
 		</span>
 	</div>
 </div>
-
-<section *ngIf="currentSearch !== ''">
-	<h6 class="text-muted">
-		Search: {{ currentSearch }}
-	</h6>
-	<hr />
-</section>
-<section class="artists">
-	<app-artist
-		[artist]="artist"
-		*ngFor="let artist of artists"></app-artist>
-</section>

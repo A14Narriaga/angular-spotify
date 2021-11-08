@@ -1,33 +1,23 @@
-import { SpotifyService } from '../../services/spotify/spotify.service'
-import { Component, OnInit } from '@angular/core'
+import {
+	Component,
+	Output,
+	EventEmitter,
+} from '@angular/core'
 
 @Component({
 	selector: 'app-searcher',
 	templateUrl: './searcher.component.html',
 	styleUrls: ['./searcher.component.sass'],
 })
-export class SearcherComponent implements OnInit {
-	currentSearch: string
-	artists: any[]
+export class SearcherComponent {
+	@Output() searchText: EventEmitter<string>
 
-	constructor(
-		private spotifyService: SpotifyService
-	) {
-		this.currentSearch = ''
-		this.artists = []
+	constructor() {
+		this.searchText = new EventEmitter()
 	}
 
-	ngOnInit(): void {}
-
-	searchArtists = (searchInput: any) => {
-		if (searchInput.value !== '') {
-			this.spotifyService
-				.getArtists(searchInput.value)
-				.subscribe((data: any) => {
-					this.artists = data.artists.items
-				})
-			this.currentSearch = searchInput.value
-		}
-		searchInput.value = ''
-	}
+	searchArtists = (searchInput: any) =>
+		searchInput.value !== ''
+			? this.searchText.emit(searchInput.value)
+			: (searchInput.value = '')
 }

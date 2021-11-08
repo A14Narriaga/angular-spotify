@@ -1,1 +1,16 @@
-<app-searcher></app-searcher>
+<app-searcher
+	(searchText)="
+		searchArtists($event)
+	"></app-searcher>
+
+<section *ngIf="currentSearch !== ''">
+	<h6 class="text-muted">
+		Search: {{ currentSearch }}
+	</h6>
+	<hr />
+</section>
+<section class="artists">
+	<app-artist
+		[artist]="artist"
+		*ngFor="let artist of artists"></app-artist>
+</section>

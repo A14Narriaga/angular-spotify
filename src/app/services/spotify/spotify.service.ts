@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core'
 })
 export class SpotifyService {
 	token =
-		'BQBN1ZWjnLUKueZ5cJkt8pJggHgs_KEKj3lEsccKKBlQRrtRaYQpsVxwVeNy66gcFR5ZxvJvq8IPwxlszmE'
+		'BQCuQsc8uCQbPw79H74aEcjVKY7SHTs372xcT1ke8ANeO4IrBTQbzq0h2ghIBHEYaYggpIM4F-dgoaqF_2k'
 
 	constructor(private httpClient: HttpClient) {}
 
