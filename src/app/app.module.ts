@@ -11,7 +11,8 @@ import { AlbumComponent } from './components/album/album.component'
 import { CutPipe } from './pipes/cut.pipe'
 import { ArtistComponent } from './components/artist/artist.component'
 import { SearchComponent } from './containers/search/search.component'
-import { ValidateImgPipe } from './pipes/validateImg.pipe'
+import { ValidateImgPipe } from './pipes/validateImg.pipe';
+import { LoadingComponent } from './components/loading/loading.component'
 
 @NgModule({
 	declarations: [
@@ -24,6 +25,7 @@ import { ValidateImgPipe } from './pipes/validateImg.pipe'
 		ArtistComponent,
 		SearchComponent,
 		ValidateImgPipe,
+  LoadingComponent,
 	],
 	imports: [
 		BrowserModule,

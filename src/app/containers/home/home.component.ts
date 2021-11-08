@@ -8,14 +8,19 @@ import { Component } from '@angular/core'
 })
 export class HomeComponent {
 	newReleases: any[]
+  loading: boolean
 	constructor(
 		private spotifyService: SpotifyService
 	) {
+    this.loading = true;
 		this.newReleases = []
 		this.spotifyService
 			.getNewReleases()
 			.subscribe(
-				(data: any) => (this.newReleases = data)
+				(data: any) => {
+          this.newReleases = data
+          this.loading = false;
+        }
 			)
 	}
 }

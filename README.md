@@ -25,5 +25,6 @@ npx ngh --dir dist/angular-spotify
 
 ## Angular CLI
 ```
-npx ng g p pipes/pipe_name/pipe_name
+npx ng g p pipes/name/name
+npx ng g c components/name
 ```

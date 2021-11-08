@@ -1,3 +1,5 @@
+<app-loading *ngIf="loading"></app-loading>
+
 <app-searcher
 	(searchText)="
 		searchArtists($event)
