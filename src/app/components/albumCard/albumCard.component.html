@@ -8,14 +8,10 @@
 			{{ album.name | cut }}
 		</h6>
 		<p class="card-text">
-			<span
-				class="text-muted"
-				*ngIf="album.artists.length === 1">
+			<span class="text-muted" *ngIf="album.artists.length === 1">
 				{{ album.artists[0].name }}
 			</span>
-			<span
-				class="text-muted"
-				*ngIf="album.artists.length > 1">
+			<span class="text-muted" *ngIf="album.artists.length > 1">
 				{{ album.artists[0].name }} and more.
 			</span>
 		</p>

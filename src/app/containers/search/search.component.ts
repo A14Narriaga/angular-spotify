@@ -11,9 +11,7 @@ export class SearchComponent implements OnInit {
 	currentSearch: string
 	loading: boolean
 
-	constructor(
-		private spotifyService: SpotifyService
-	) {
+	constructor(private spotifyService: SpotifyService) {
 		this.artists = []
 		this.loading = false
 		this.currentSearch = ''
@@ -22,13 +20,11 @@ export class SearchComponent implements OnInit {
 	ngOnInit(): void {}
 
 	searchArtists = (value: any) => {
-    this.loading = true
-		this.spotifyService
-			.getArtists(value)
-			.subscribe((data: any) => {
-				this.artists = data
-				this.loading = false
-			})
+		this.loading = true
+		this.spotifyService.getArtists(value).subscribe((data: any) => {
+			this.artists = data
+			this.loading = false
+		})
 		this.currentSearch = value
 	}
 }

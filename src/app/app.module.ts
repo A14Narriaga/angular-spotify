@@ -7,9 +7,9 @@ import { AppComponent } from './app.component'
 import { HomeComponent } from './containers/home/home.component'
 import { SearcherComponent } from './components/searcher/searcher.component'
 import { NavbarComponent } from './components/navbar/navbar.component'
-import { AlbumComponent } from './components/album/album.component'
+import { AlbumCardComponent } from './components/albumCard/albumCard.component'
 import { CutPipe } from './pipes/cut.pipe'
-import { ArtistComponent } from './components/artist/artist.component'
+import { ArtistCardComponent } from './components/artistCard/artistCard.component'
 import { SearchComponent } from './containers/search/search.component'
 import { ValidateImgPipe } from './pipes/validateImg.pipe'
 import { LoadingComponent } from './components/loading/loading.component'
@@ -22,9 +22,9 @@ import { PaginationPipe } from './pipes/pagination.pipe'
 		HomeComponent,
 		SearcherComponent,
 		NavbarComponent,
-		AlbumComponent,
+		AlbumCardComponent,
 		CutPipe,
-		ArtistComponent,
+		ArtistCardComponent,
 		SearchComponent,
 		ValidateImgPipe,
 		LoadingComponent,

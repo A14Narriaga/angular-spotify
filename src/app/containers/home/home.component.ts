@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router'
 	templateUrl: './home.component.html',
 	styleUrls: ['./home.component.sass'],
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit {
 	newReleases: any[] = []
 	loading: boolean = true
 	itemsForPage = 4
@@ -16,9 +16,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 	constructor(
 		private spotifyService: SpotifyService,
 		private activatedRoute: ActivatedRoute
-	) {}
-
-	ngAfterViewInit(): void {
+	) {
 		this.spotifyService.getNewReleases().subscribe((data: any) => {
 			this.newReleases = data
 			this.numOfPages = Math.ceil(data.length / this.itemsForPage)
@@ -27,8 +25,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
 	}
 
 	ngOnInit(): void {
-		this.activatedRoute.params.subscribe(
-			({ pag }) => (this.currentPage = pag)
-		)
+		this.activatedRoute.params.subscribe(({ pag }) => {
+			if (pag) {
+				console.log(this.loading)
+				console.log(this.numOfPages)
+				this.currentPage = pag
+			}
+		})
 	}
 }
