@@ -22,3 +22,8 @@ npm i -g angular-cli-ghpages
 npx ng build --base-href "https://a14narriaga.github.io/angular-spotify/"
 npx ngh --dir dist/angular-spotify
 ```
+
+## Angular CLI
+```
+npx ng g p pipes/pipe_name/pipe_name
+```

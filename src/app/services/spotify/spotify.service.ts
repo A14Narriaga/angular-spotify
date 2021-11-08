@@ -3,34 +3,38 @@ import {
 	HttpHeaders,
 } from '@angular/common/http'
 import { Injectable } from '@angular/core'
+// Aspersor de agua
+import { map } from 'rxjs'
 
 @Injectable({
 	providedIn: 'root',
 })
 export class SpotifyService {
 	token =
-		'BQCuQsc8uCQbPw79H74aEcjVKY7SHTs372xcT1ke8ANeO4IrBTQbzq0h2ghIBHEYaYggpIM4F-dgoaqF_2k'
+		'BQCGYMD53uWBsf1XWzVTOvoFdgRkTXu1qo4iz-oJekyRRJcFXWa7eOlWqJpbkG4mKbhm2sXfvl8JptcqRcE'
 
 	constructor(private httpClient: HttpClient) {}
 
-	getNewReleases = () => {
+	getQuery = (query: string) => {
 		const headers = new HttpHeaders({
 			Authorization: `Bearer ${this.token}`,
 		})
-		return this.httpClient.get(
-			'https://api.spotify.com/v1/browse/new-releases',
-			{ headers }
-		)
+		const url = `https://api.spotify.com/v1/${query}`
+		return this.httpClient.get(url, { headers })
 	}
 
-	getArtists = (value: string) => {
-		value = value.replace(' ', '%20')
-		const headers = new HttpHeaders({
-			Authorization: `Bearer ${this.token}`,
-		})
-		return this.httpClient.get(
-			`https://api.spotify.com/v1/search?q=${value}&type=artist`,
-			{ headers }
+	getNewReleases = () =>
+		this.getQuery('browse/new-releases').pipe(
+			map((data: any) => data.albums.items)
 		)
-	}
+
+	getArtists = (value: string) =>
+		this.getQuery(
+			`search?q=${value.replace(
+				' ',
+				'%20'
+			)}&type=artist`
+		).pipe(
+			map((data: any) => data['artists'].items)
+		)
 }

@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core'
 	styleUrls: ['./album.component.sass'],
 })
 export class AlbumComponent {
-	@Input() song: any
+	@Input() album: any
 }

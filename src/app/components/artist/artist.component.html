@@ -1,10 +1,10 @@
 <div class="card">
 	<img
-		[src]="artist.images[0].url"
+		[src]="artist.images | validateImg"
 		class="card-img-top"
-		alt="..." />
+		[alt]="artist.name" />
 	<div class="card-body">
-		<h6 class="card-title text-muted">
+		<h6 class="card-text text-muted">
 			{{ artist.name | cut }}
 		</h6>
 	</div>

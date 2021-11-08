@@ -1,22 +1,22 @@
 <div class="card">
 	<img
-		[src]="song.images[0].url"
+		[src]="album.images | validateImg"
 		class="card-img-top"
-		alt="..." />
+		[alt]="album.name" />
 	<div class="card-body">
 		<h6 class="card-title">
-			{{ song.name | cut }}
+			{{ album.name | cut }}
 		</h6>
 		<p class="card-text">
 			<span
 				class="text-muted"
-				*ngIf="song.artists.length === 1">
-				{{ song.artists[0].name }}
+				*ngIf="album.artists.length === 1">
+				{{ album.artists[0].name }}
 			</span>
 			<span
 				class="text-muted"
-				*ngIf="song.artists.length > 1">
-				{{ song.artists[0].name }} and more.
+				*ngIf="album.artists.length > 1">
+				{{ album.artists[0].name }} and more.
 			</span>
 		</p>
 	</div>

@@ -8,9 +8,10 @@ import { HomeComponent } from './containers/home/home.component'
 import { SearcherComponent } from './components/searcher/searcher.component'
 import { NavbarComponent } from './components/navbar/navbar.component'
 import { AlbumComponent } from './components/album/album.component'
-import { CutPipe } from './pipes/cut/cut.pipe'
+import { CutPipe } from './pipes/cut.pipe'
 import { ArtistComponent } from './components/artist/artist.component'
 import { SearchComponent } from './containers/search/search.component'
+import { ValidateImgPipe } from './pipes/validateImg.pipe'
 
 @NgModule({
 	declarations: [
@@ -22,6 +23,7 @@ import { SearchComponent } from './containers/search/search.component'
 		CutPipe,
 		ArtistComponent,
 		SearchComponent,
+		ValidateImgPipe,
 	],
 	imports: [
 		BrowserModule,
