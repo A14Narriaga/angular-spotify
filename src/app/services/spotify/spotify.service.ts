@@ -1,7 +1,4 @@
-import {
-	HttpClient,
-	HttpHeaders,
-} from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 // Aspersor de agua
 import { map } from 'rxjs'
@@ -11,7 +8,7 @@ import { map } from 'rxjs'
 })
 export class SpotifyService {
 	token =
-		'BQBfobCdE8ZLdWLiAqosP33-cuKRlt8ti4nYLaVkc-nU9omR9jY0Ln-V7j3y_Krz2vMXFdLSEdfSjdb2QQc'
+		'BQCB3G34yUaYc_XfG0OAA64qEE-OEt4WS7Ok2EoSshDBQg6OqUNwPBEItZ9ScyEAJho8R1D6WULnUHhZMwg'
 
 	constructor(private httpClient: HttpClient) {}
 
@@ -30,11 +27,6 @@ export class SpotifyService {
 
 	getArtists = (value: string) =>
 		this.getQuery(
-			`search?q=${value.replace(
-				' ',
-				'%20'
-			)}&type=artist`
-		).pipe(
-			map((data: any) => data['artists'].items)
-		)
+			`search?q=${value.replace(' ', '%20')}&type=artist`
+		).pipe(map((data: any) => data['artists'].items))
 }

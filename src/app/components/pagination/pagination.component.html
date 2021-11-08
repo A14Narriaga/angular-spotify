@@ -1,0 +1,29 @@
+<nav class="mt-4" aria-label="Page navigation example">
+	<ul class="pagination justify-content-center">
+		<li
+			*ngIf="pages.length > 1"
+			class="page-item"
+			(click)="movePage('last')">
+			<a class="page-link">
+				<i class="fas fa-angle-double-left"></i>
+			</a>
+		</li>
+		<li
+			*ngFor="let page of pages"
+			class="page-item"
+			[ngClass]="{
+				activePag: currentPage === page
+			}"
+			(click)="setPage(page)">
+			<a class="page-link">{{ page }}</a>
+		</li>
+		<li
+			*ngIf="pages.length > 1"
+			class="page-item"
+			(click)="movePage('next')">
+			<a class="page-link">
+				<i class="fas fa-angle-double-right"></i>
+			</a>
+		</li>
+	</ul>
+</nav>

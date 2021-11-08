@@ -8,6 +8,9 @@
 			[album]="release"
 			*ngFor="
 				let release of newReleases
+					| pagination: itemsForPage:numOfPages:currentPage
 			"></app-album>
 	</section>
 </div>
+
+<app-pagination [numOfPages]="numOfPages"></app-pagination>

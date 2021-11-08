@@ -2,7 +2,7 @@
 	"semi": false,
 	"singleQuote": true,
 	"useTabs": true,
-	"printWidth": 50,
+	"printWidth": 70,
 	"bracketSpacing": true,
 	"bracketSameLine": true,
 	"htmlWhitespaceSensitivity": "ignore",
