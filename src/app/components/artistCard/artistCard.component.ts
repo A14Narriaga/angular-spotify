@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core'
 
 @Component({
-	selector: 'app-artist',
+	selector: 'app-artistCard',
 	templateUrl: './artistCard.component.html',
 	styleUrls: ['./artistCard.component.sass'],
 })

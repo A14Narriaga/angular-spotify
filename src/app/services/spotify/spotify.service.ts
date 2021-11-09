@@ -8,7 +8,7 @@ import { map } from 'rxjs'
 })
 export class SpotifyService {
 	token =
-		'BQAS4nv24AIK1voPU_dGB3zKwxrsCrkNG4p8AkSVgUZ_miHb-5NwyqVLaWNaxnxUplf5f1nMNOTThavXAW8'
+		'BQCVP0TVE-3IV-Y3jRBT1Pe5G_5dJnpDuhmr23rzfQZxcZitFTL2-3vZa0cqYldpP0uhs-_N1ySMxq_XXZ4'
 
 	constructor(private httpClient: HttpClient) {}
 
@@ -29,4 +29,6 @@ export class SpotifyService {
 		this.getQuery(
 			`search?q=${value.replace(' ', '%20')}&type=artist`
 		).pipe(map((data: any) => data['artists'].items))
+
+	getArtist = (id: string) => this.getQuery(`artists/${id}`)
 }

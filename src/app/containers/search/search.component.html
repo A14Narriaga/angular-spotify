@@ -7,7 +7,8 @@
 	<hr />
 </section>
 <section class="artists">
-	<app-artist
+	<app-artistCard
+		[routerLink]="['/artist', artist.id]"
 		[artist]="artist"
-		*ngFor="let artist of artists"></app-artist>
+		*ngFor="let artist of artists"></app-artistCard>
 </section>

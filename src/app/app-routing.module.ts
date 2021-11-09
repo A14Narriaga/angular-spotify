@@ -1,3 +1,4 @@
+import { ArtistComponent } from './containers/artist/artist.component'
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { HomeComponent } from './containers/home/home.component'
@@ -11,6 +12,10 @@ const routes: Routes = [
 	{
 		path: 'search',
 		component: SearchComponent,
+	},
+	{
+		path: 'artist/:id',
+		component: ArtistComponent,
 	},
 	{
 		path: '**',

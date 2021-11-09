@@ -1,5 +1,5 @@
 import { SpotifyService } from '../../services/spotify/spotify.service'
-import { AfterViewInit, Component, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 
 @Component({
@@ -25,12 +25,8 @@ export class HomeComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		this.activatedRoute.params.subscribe(({ pag }) => {
-			if (pag) {
-				console.log(this.loading)
-				console.log(this.numOfPages)
-				this.currentPage = pag
-			}
-		})
+		this.activatedRoute.params.subscribe(
+			({ pag }) => (this.currentPage = pag)
+		)
 	}
 }
