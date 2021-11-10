@@ -14,7 +14,8 @@ import { ValidateImgPipe } from './pipes/validateImg.pipe'
 import { LoadingComponent } from './components/loading/loading.component'
 import { PaginationComponent } from './components/pagination/pagination.component'
 import { PaginationPipe } from './pipes/pagination.pipe';
-import { ArtistComponent } from './containers/artist/artist.component'
+import { SecureTrackPipe } from './pipes/secureTrack.pipe';
+import { ArtistComponent } from './containers/artist/artist.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ArtistComponent } from './containers/artist/artist.component'
     PaginationComponent,
     PaginationPipe,
     ArtistComponent,
+    SecureTrackPipe
   ],
   imports: [
     BrowserModule,

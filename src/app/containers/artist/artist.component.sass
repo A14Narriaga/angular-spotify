@@ -15,6 +15,7 @@
       font-size: 2rem
       text-shadow: 1px 1px black
 
+  // Table
 table
   border-color: black
   thead
@@ -23,6 +24,12 @@ table
     tr
       &:hover
         background-color: #3030308a
+        .number
+          display: none
+        .play
+          display: inline
+.play
+  display: none
 
 .title
   display: flex
@@ -34,3 +41,10 @@ table
     margin-left: 1rem
     margin-top: 1rem
     line-height: 1.1
+
+.player
+  position: fixed
+  width: 100%
+  background-color: white
+  top: 88.5%
+  left: 0%

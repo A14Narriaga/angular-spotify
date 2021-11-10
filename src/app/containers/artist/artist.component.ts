@@ -11,6 +11,7 @@ export class ArtistComponent {
   artist: any = {}
   topTracks: any[] = []
   loading: boolean = true
+  currentTrack: string = ''
 
   constructor(
     private spotifyService: SpotifyService,
@@ -35,8 +36,10 @@ export class ArtistComponent {
     this.spotifyService
       .getTopTracks(id)
       .subscribe((data) => {
+        console.log(data);
         this.topTracks = data
         this.loading = false
       })
   }
+
 }

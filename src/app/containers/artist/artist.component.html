@@ -25,7 +25,13 @@
 	</thead>
 	<tbody>
 		<tr *ngFor="let track of topTracks; let i = index">
-			<th class="text-muted" scope="row">{{ i + 1 }}</th>
+			<th
+				class="text-muted"
+				scope="row"
+				(click)="currentTrack = track.uri">
+				<i class="number text-muted">{{ i + 1 }}</i>
+				<i class="play text-muted fas fa-play"></i>
+			</th>
 			<td class="title">
 				<section class="image">
 					<img
@@ -55,3 +61,23 @@
 		Back
 	</button>
 </div>
+
+<!-- <section
+	*ngIf="currentTrack !== ''"
+	class="player text-center">
+	<audio [src]="currentTrack" autoplay controls></audio>
+</section> -->
+
+<section
+	*ngIf="currentTrack !== ''"
+	style="margin-bottom: 6rem"></section>
+
+<iframe
+	*ngIf="currentTrack !== ''"
+	class="player"
+	[src]="currentTrack | secureTrack"
+	width="100%"
+	height="80"
+	frameborder="0"
+	allowtransparency="true"
+	allow="encrypted-media"></iframe>
