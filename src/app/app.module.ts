@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
-import { NgxPaginationModule } from 'ngx-pagination'
 import { AppRoutingModule } from './app-routing.module'
 import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component'
@@ -18,28 +17,27 @@ import { PaginationPipe } from './pipes/pagination.pipe';
 import { ArtistComponent } from './containers/artist/artist.component'
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		HomeComponent,
-		SearcherComponent,
-		NavbarComponent,
-		AlbumCardComponent,
-		CutPipe,
-		ArtistCardComponent,
-		SearchComponent,
-		ValidateImgPipe,
-		LoadingComponent,
-		PaginationComponent,
-		PaginationPipe,
-  ArtistComponent,
-	],
-	imports: [
-		BrowserModule,
-		AppRoutingModule,
-		HttpClientModule,
-		NgxPaginationModule,
-	],
-	providers: [],
-	bootstrap: [AppComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    SearcherComponent,
+    NavbarComponent,
+    AlbumCardComponent,
+    CutPipe,
+    ArtistCardComponent,
+    SearchComponent,
+    ValidateImgPipe,
+    LoadingComponent,
+    PaginationComponent,
+    PaginationPipe,
+    ArtistComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
