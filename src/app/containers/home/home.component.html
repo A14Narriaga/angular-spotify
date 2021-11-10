@@ -1,6 +1,8 @@
 <app-loading *ngIf="loading"></app-loading>
 
-<div class="container" *ngIf="!loading">
+<app-error *ngIf="error !== ''" [error]="error"></app-error>
+
+<div class="container" *ngIf="newReleases.length !== 0">
 	<h6 class="text-muted">New releases</h6>
 	<hr />
 	<section class="albums">
@@ -13,4 +15,7 @@
 	</section>
 </div>
 
-<app-pagination [numOfPages]="numOfPages"></app-pagination>
+<app-pagination
+	*ngIf="newReleases.length !== 0"
+	[numOfPages]="numOfPages">
+</app-pagination>

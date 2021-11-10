@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router'
 export class HomeComponent implements OnInit {
   newReleases: any[] = []
   loading: boolean = true
+  error: string = ''
   itemsForPage = 6
   numOfPages: number = 0
   currentPage: number = 1
@@ -20,6 +21,10 @@ export class HomeComponent implements OnInit {
     this.spotifyService.getNewReleases().subscribe((data: any) => {
       this.newReleases = data
       this.numOfPages = Math.ceil(data.length / this.itemsForPage)
+      this.loading = false
+    }, (error) => {
+      console.log(error);
+      this.error = error.error.error.message
       this.loading = false
     })
   }

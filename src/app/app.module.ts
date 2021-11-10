@@ -16,6 +16,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { PaginationPipe } from './pipes/pagination.pipe';
 import { SecureTrackPipe } from './pipes/secureTrack.pipe';
 import { ArtistComponent } from './containers/artist/artist.component';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ArtistComponent } from './containers/artist/artist.component';
     PaginationComponent,
     PaginationPipe,
     ArtistComponent,
-    SecureTrackPipe
+    SecureTrackPipe,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
