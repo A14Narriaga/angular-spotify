@@ -12,13 +12,12 @@
 	</div>
 </div>
 
-<table class="table mb-2">
+<table class="table align-middle mb-2">
 	<thead>
 		<tr>
 			<th class="text-muted" scope="col">#</th>
 			<th class="text-muted" scope="col">Title</th>
 			<th class="text-muted" scope="col">Album</th>
-			<th class="text-muted" scope="col">Release</th>
 			<th scope="col">
 				<i class="text-muted far fa-clock"></i>
 			</th>
@@ -34,7 +33,7 @@
 						[alt]="track.name" />
 				</section>
 				<section class="info">
-					<p>{{ track.name }}</p>
+					{{ track.name }}
 					<p class="text-muted">
 						{{ track.artists[0].name }}
 					</p>
@@ -42,9 +41,8 @@
 			</td>
 			<td class="text-muted">{{ track.album.name }}</td>
 			<td class="text-muted">
-				{{ track.album.release_date_precision }}
+				{{ track.duration_ms | date: 'h:mm' }}
 			</td>
-			<td class="text-muted">{{ track.duration_ms }}</td>
 		</tr>
 	</tbody>
 </table>
